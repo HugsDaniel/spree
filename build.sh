@@ -17,7 +17,7 @@ function set_gemfile(){
 echo "Setup Spree defaults and creating test application..."
 rm_gemfile_lock
 bundle check || bundle install
-bundle exec rake test_app
+DB=runner bundle exec rake test_app
 
 # Spree API
 echo "Setup Spree API and running RSpec..."
